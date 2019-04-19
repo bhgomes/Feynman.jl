@@ -1,0 +1,8 @@
+name = "Feynman"
+uuid = "f6ed01fa-62c0-11e9-241d-f9f2fca93c57"
+authors = ["bhgomes <bhgomes.github@gmail.com>"]
+version = "0.0.1"
+
+[deps]
+LightGraphs = "093fc24a-ae57-5d10-9952-331d41423f4d"
+StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
