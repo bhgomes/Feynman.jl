@@ -7,7 +7,7 @@
 [![Coveralls](https://coveralls.io/repos/github/bhgomes/Feynman.jl/badge.svg?branch=master)](https://coveralls.io/github/bhgomes/Feynman.jl?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/6f6936ab88faf2c0387c/maintainability)](https://codeclimate.com/github/bhgomes/Feynman.jl/maintainability)
 
-_Feynman Diagrams in Julia_
+_Feynman Diagrams for the Julian_
 
 </div>
 
