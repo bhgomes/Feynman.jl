@@ -1,4 +1,4 @@
-<div style="center">
+<div align="center">
 
 # Feynman.jl
 [![](https://img.shields.io/badge/docs-stable-blue.svg)](https://bhgomes.github.io/Feynman.jl/stable)
