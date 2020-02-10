@@ -1,4 +1,4 @@
-# Feynman/model.jl
+# Feynman/amplitudes.jl
 #
 # MIT License
 #
@@ -21,3 +21,8 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
+
+function amplitude(topology::Topology) end
+
+function amplitude(diagram::Diagram) end

@@ -1,4 +1,4 @@
-# Feynman.jl
+# Feynman/models/standard.jl
 #
 # MIT License
 #
@@ -22,15 +22,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""
-    Feynman
+include("../models.jl")
 
-_Feynman Diagrams for Julia_
-"""
-module Feynman
+export QED, QCD, StandardModel
 
 
+struct QED <: ScatteringModel end
 
+struct QCD <: ScatteringModel end
 
-
-end # module Feynman
+const StandardModel = CombinationModel{QED, QCD} end

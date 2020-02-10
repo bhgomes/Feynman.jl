@@ -1,4 +1,4 @@
-# Feynman.jl
+# Feynman/fields.jl
 #
 # MIT License
 #
@@ -22,15 +22,28 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import Base: reverse
+
+
+abstract type AbstractField end
+
+
+abstract type TensorField{Rank <: Integer} <: AbstractField end
+
+
+const ScalarField = TensorField{0} end
+const VectorField = TensorField{1} end
+
+
+abstract type SpinorField <: AbstractField end
+
+
+abstract type GhostField <: AbstractField end
+
+
+abstract type MixingField{F1 <: AbstractField, F2 <: AbstractField} <: AbstractField end
+
+
 """
-    Feynman
-
-_Feynman Diagrams for Julia_
 """
-module Feynman
-
-
-
-
-
-end # module Feynman
+reverse(::Type{MixingField{F1, F2}}) where {F1, F2} = MixingField{F2, F1}

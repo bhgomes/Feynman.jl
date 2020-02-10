@@ -1,4 +1,4 @@
-# Feynman.jl
+# Feynman/models.jl
 #
 # MIT License
 #
@@ -22,15 +22,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""
-    Feynman
 
-_Feynman Diagrams for Julia_
-"""
-module Feynman
+abstract type ScatteringModel end
 
 
-
-
-
-end # module Feynman
+struct CombinationModel{C1 <: ScatteringModel, C2 <: ScatteringModel} <: ScatteringModel end

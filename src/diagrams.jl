@@ -1,4 +1,4 @@
-# Feynman/base.jl
+# Feynman/diagrams.jl
 #
 # MIT License
 #
@@ -21,3 +21,62 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
+import LightGraphs: AbstractEdge
+import MetaGraphs: MetaGraph, MetaDiGraph
+
+include("utils/graph_wrapper.jl")
+
+export Topology, Diagram, topologies
+
+
+"""
+"""
+struct Topology{I} <: GraphWrapper{I}
+    graph::MetaGraph{I}
+end
+
+
+"""
+"""
+graph(t::Topology) = t.graph
+
+
+"""
+"""
+function (::Type{Topology})(mdg::MetaDiGraph)
+    Topology(MetaGraph(mdg))
+end
+
+
+"""
+"""
+function topologies(loops::Integer, external::Integer)
+    error("Not Implemented")
+end
+
+
+"""
+"""
+function topologies(loops::Integer, incoming::Integer, outgoing::Integer)
+    topologies(loops, incoming + outgoing)
+end
+
+
+"""
+"""
+function topologies(loops::Integer, inout::Pair{<: Integer, <: Integer})
+    topologies(loops, first(inout), last(inout))
+end
+
+
+"""
+"""
+struct Diagram{I} <: AbstractGraph{I}
+    graph::MetaDiGraph{I}
+end
+
+
+"""
+"""
+graph(t::Diagram) = t.graph
